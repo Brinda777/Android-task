@@ -1,0 +1,33 @@
+
+// import 'package:dart_application_1/dart_application_1.dart' as dart_application_1;
+
+// void main(List<String> arguments) {
+//   print('Hello world: ${dart_application_1.calculate()}!');
+// }
+
+import 'dart:io';
+
+void main() {
+  print("Enter a string: ");
+  String input = stdin.readLineSync()!.toLowerCase();
+  
+  if (isPalindrome(input)) {
+    print("Yes, the string is a palindrome.");
+  } else {
+    print("No, the string is not a palindrome.");
+  }
+}
+
+bool isPalindrome(String str) {
+  int start = 0;
+  int end = str.length - 1;
+  
+  while (start < end) {
+    if (str[start] != str[end]) {
+      return false;
+    }
+    start++;
+    end--;
+  }
+  return true;
+}
